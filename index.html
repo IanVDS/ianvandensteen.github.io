@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ian Van den Steen — Mechatronics engineering student" />
+  <title>Ian Van den Steen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem("theme");
+        var theme = stored || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#top" aria-label="Home">IVDS</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle theme">
+        <span class="theme-icon theme-icon--moon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 14.5A8.5 8.5 0 1 1 9.5 3a7 7 0 0 0 11.5 11.5z"/></svg>
+        </span>
+        <span class="theme-icon theme-icon--sun" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="top" class="hero">
+      <div class="container hero-inner">
+        <p class="eyebrow">Mechatronics · Embedded · Robotics</p>
+        <h1>Ian Van den Steen</h1>
+        <p class="pitch">
+          Mechatronics engineering student
+        </p>
+        <div class="hero-links">
+          <a href="https://github.com/IanVDS" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/ianvds/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="mailto:ixvandensteen@gmail.com">Email</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section projects">
+      <div class="container">
+        <div class="section-header">
+          <h2>Projects</h2>
+          <p class="section-lede">Hardware, firmware, and systems work — from CAD to silicon.</p>
+        </div>
+
+        <div class="project-grid">
+          <a class="project-card" href="projects/usb-pd-source.html">
+            <div class="project-media project-media--render">
+              <img src="assets/projects/usb-pd-source-3d.png" alt="3D render of the 100W USB PD source PCB" />
+            </div>
+            <div class="project-body">
+              <h3>100W USB PD Source Custom PCB</h3>
+              <p>
+                Custom PCB that takes power from common PC PSU connectors and
+                outputs regulated power over USB-C using USB PD 3.0, up to 100W.
+              </p>
+              <ul class="tags">
+                <li>Altium Designer</li>
+                <li>LTSpice</li>
+                <li>Power Electronics</li>
+                <li>USB-PD</li>
+              </ul>
+              <span class="project-link">View project →</span>
+            </div>
+          </a>
+
+          <a class="project-card" href="projects/altimeter.html">
+            <div class="project-media" aria-hidden="true">
+              <div class="media-placeholder">
+                <span>assets/projects/altimeter</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3>Custom Altimeter PCB</h3>
+              <p>
+                RP2040-based altimeter PCB for a model rocket, with redundant flash
+                storage and safety-gated e-match deployment.
+              </p>
+              <ul class="tags">
+                <li>KiCad</li>
+                <li>RP2040</li>
+                <li>Embedded Systems</li>
+                <li>Sensors</li>
+              </ul>
+              <span class="project-link">View project →</span>
+            </div>
+          </a>
+
+          <a class="project-card" href="projects/weathering-chamber.html">
+            <div class="project-media" aria-hidden="true">
+              <div class="media-placeholder">
+                <span>assets/projects/weathering-chamber</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3>Accelerated Weathering Chamber</h3>
+              <p>
+                Automated ASTM G151/G154 weathering chamber for PLA composite filament,
+                including a custom Arduino Nano control PCB for heaters, UV, fans, and sensors.
+              </p>
+              <ul class="tags">
+                <li>SolidWorks</li>
+                <li>KiCad</li>
+                <li>C++</li>
+                <li>Arduino</li>
+                <li>Mechanical Design</li>
+                <li>Materials Testing</li>
+              </ul>
+              <span class="project-link">View project →</span>
+            </div>
+          </a>
+
+          <a class="project-card" href="projects/bread-io.html">
+            <div class="project-media" aria-hidden="true">
+              <div class="media-placeholder">
+                <span>assets/projects/bread-io</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3>Industrial IO Card for BREAD</h3>
+              <p>
+                24V-tolerant digital I/O PCB for BREAD (Broadly Reconfigurable and
+                Expandable Automation Device), an open-source modular automation platform.
+              </p>
+              <ul class="tags">
+                <li>KiCad</li>
+                <li>LTSpice</li>
+                <li>Industrial Automation</li>
+                <li>Open Source</li>
+              </ul>
+              <span class="project-link">View project →</span>
+            </div>
+          </a>
+
+          <a class="project-card" href="projects/buck-converter.html">
+            <div class="project-media" aria-hidden="true">
+              <div class="media-placeholder">
+                <span>assets/projects/buck-converter</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3>Integrated 6S to 6V Buck Converter</h3>
+              <p>
+                Non-synchronous buck converter stepping a 6S LiPo battery down to a
+                steady 6V for a custom servo driver on a fixed-wing drone.
+              </p>
+              <ul class="tags">
+                <li>Altium Designer</li>
+                <li>Power Electronics</li>
+                <li>Drones</li>
+              </ul>
+              <span class="project-link">View project →</span>
+            </div>
+          </a>
+
+          <a class="project-card" href="projects/robotic-arm.html">
+            <div class="project-media" aria-hidden="true">
+              <div class="media-placeholder">
+                <span>Image / GIF / video</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3>Robotic Arm</h3>
+              <p>
+                Multi-joint arm designed in Onshape with attention to joint loading,
+                motor sizing, and a rigid rotating base. Focused on mechanical
+                design decisions that hold up under real torque.
+              </p>
+              <ul class="tags">
+                <li>Onshape</li>
+                <li>BLDC motors</li>
+                <li>Bearings</li>
+                <li>Slewing ring</li>
+              </ul>
+              <span class="project-link">View project →</span>
+            </div>
+          </a>
+
+          <a class="project-card" href="projects/spotify-led-matrix.html">
+            <div class="project-media" aria-hidden="true">
+              <div class="media-placeholder">
+                <span>Image / GIF / video</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3>Spotify Album Art LED Matrix</h3>
+              <p>
+                A 64×64 HUB75 LED panel driven by a Raspberry Pi Pico 2 W that
+                pulls the currently playing Spotify track over OAuth/PKCE, then
+                decodes and renders album art in firmware.
+              </p>
+              <ul class="tags">
+                <li>Pico 2 W</li>
+                <li>HUB75</li>
+                <li>OAuth / PKCE</li>
+                <li>JPEG decode</li>
+                <li>C / firmware</li>
+              </ul>
+              <span class="project-link">View project →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+      <div class="container about-inner">
+        <div class="section-header">
+          <h2>About</h2>
+        </div>
+        <div class="about-content">
+          <p>
+            I'm a third-year Mechatronics Engineering student at the
+            <strong>University of Waterloo</strong>. I care about systems that
+            sit at the intersection of mechanical design, electronics, and
+            firmware — especially when they have to move through the world
+            reliably.
+          </p>
+          <p>
+            Most recently I co-oped at <strong>Vermeer</strong>, working on
+            GPS-alternative navigation for drones. On campus I'm a member of the
+            <strong>Waterloo Aerial Robotics Group (WARG)</strong>, where I help
+            build and fly autonomous aircraft.
+          </p>
+          <dl class="about-meta">
+            <div>
+              <dt>School</dt>
+              <dd>University of Waterloo · Mechatronics Eng. (3A)</dd>
+            </div>
+            <div>
+              <dt>Recent co-op</dt>
+              <dd>Vermeer — GPS-alternative drone navigation</dd>
+            </div>
+            <div>
+              <dt>Team</dt>
+              <dd>Waterloo Aerial Robotics Group (WARG)</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="container">
+        <div class="section-header">
+          <h2>Contact</h2>
+          <p class="section-lede">Say hello — the inbox is open.</p>
+        </div>
+        <ul class="contact-list">
+          <li>
+            <span class="contact-label">Email</span>
+            <a href="mailto:ixvandensteen@gmail.com">ixvandensteen@gmail.com</a>
+          </li>
+          <li>
+            <span class="contact-label">GitHub</span>
+            <a href="https://github.com/IanVDS" target="_blank" rel="noopener noreferrer">github.com/IanVDS</a>
+          </li>
+          <li>
+            <span class="contact-label">LinkedIn</span>
+            <a href="https://www.linkedin.com/in/ianvds/" target="_blank" rel="noopener noreferrer">linkedin.com/in/ianvds</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Ian Van den Steen</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

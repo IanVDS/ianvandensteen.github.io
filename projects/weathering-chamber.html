@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Automated ASTM G151/G154 weathering chamber with custom Arduino Nano control PCB for PLA composite filament. Ian Van den Steen." />
+  <title>Accelerated Weathering Chamber — Ian Van den Steen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem("theme");
+        var theme = stored || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="../index.html" aria-label="Home">IVDS</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle theme">
+        <span class="theme-icon theme-icon--moon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 14.5A8.5 8.5 0 1 1 9.5 3a7 7 0 0 0 11.5 11.5z"/></svg>
+        </span>
+        <span class="theme-icon theme-icon--sun" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="project-page">
+      <div class="container">
+        <a class="back-link" href="../index.html#projects">← All projects</a>
+
+        <header class="project-page-header">
+          <p class="eyebrow">Mechatronics · Materials · PCB</p>
+          <h1>Accelerated Weathering Chamber</h1>
+          <p class="project-page-lede">
+            Automated ASTM G151/G154 weathering chamber for PLA composite filament,
+            including a custom Arduino Nano control PCB for heaters, UV, fans, and sensors.
+          </p>
+          <ul class="tags">
+            <li>SolidWorks</li>
+            <li>KiCad</li>
+            <li>C++</li>
+            <li>Arduino</li>
+            <li>Mechanical Design</li>
+            <li>Materials Testing</li>
+            <li>PCB Design</li>
+          </ul>
+        </header>
+
+        <div class="project-hero-media">
+          <div class="media-placeholder">
+            <span>Drop image in assets/projects/weathering-chamber</span>
+          </div>
+          <!-- Replace placeholder with: <img src="../assets/projects/weathering-chamber.jpg" alt="Accelerated Weathering Chamber" /> -->
+        </div>
+
+        <div class="project-page-body">
+          <section>
+            <h2>Overview</h2>
+            <p>
+              Built an automated chamber that degrades experimental PLA composite filament
+              to simulate prolonged outdoor exposure per ASTM G151/G154 — mechanical
+              enclosure, electrical subsystem, control firmware, and a custom PCB so an
+              Arduino Nano can run heaters, UV lamp, fans, and sensors with minimal
+              human interaction.
+            </p>
+          </section>
+
+          <section>
+            <h2>Notable features</h2>
+            <ul>
+              <li>Closed-loop heat control with day/night heat and condensation cycles</li>
+              <li>Automated UV, temperature, and humidity exposure</li>
+              <li>Plywood enclosure with 3D-printed PET-G end caps</li>
+              <li>Custom Arduino Nano control PCB (KiCad) for heaters, UV, fans, and sensors</li>
+              <li>Through-hole/breakout-friendly layout for simple assembly</li>
+              <li>I2C sensor interface and micro SD logging over SPI</li>
+              <li>Panel-mount controller alongside the power supply</li>
+              <li>Capable of degrading hundreds of Type V ASTM D638 samples at once</li>
+            </ul>
+          </section>
+
+          <details class="star-details">
+            <summary>Project details <span class="star-hint">(Situation · Task · Action · Result)</span></summary>
+            <div class="star-grid">
+              <div class="star-item">
+                <h3>Situation</h3>
+                <p>
+                  Needed to degrade an experimental PLA composite filament to simulate
+                  prolonged outdoor exposure in a short time, per ASTM G151/G154 — and a
+                  control module for heaters, UV lamp, fans, and sensors that prioritized
+                  ease of assembly.
+                </p>
+              </div>
+              <div class="star-item">
+                <h3>Task</h3>
+                <p>
+                  Expose filament to extreme temperature, humidity, and UV light with
+                  minimal human interaction, and design a PCB allowing full chamber
+                  control with accessibility as a priority.
+                </p>
+              </div>
+              <div class="star-item">
+                <h3>Action</h3>
+                <p><strong>Electrical:</strong> Designed electrical subsystem in KiCad; used Arduino Nano and relays to control/interface with sensors, heaters, and UV lamp. Designed a custom control PCB so the Nano could interface with several I2C sensors, log to a micro SD card over SPI, and drive multiple heaters, fans, and a UV light — panel-mounted alongside the power supply.</p>
+                <p><strong>Mechanical:</strong> Designed mechanical subsystem in SolidWorks; cut plywood enclosure with power tools; 3D-printed PET-G end caps.</p>
+                <p><strong>Software:</strong> Programmed controller in C++ with closed-loop heat control, day/night heat/condensation cycles, datalogging, and full automation.</p>
+              </div>
+              <div class="star-item">
+                <h3>Result</h3>
+                <p>
+                  1.2m tall, 0.4m diameter prototype capable of degrading hundreds of
+                  Type V ASTM D638 samples simultaneously. Enabled a full test run that
+                  successfully degraded PLA filament samples over a month per ASTM G151/G154.
+                </p>
+              </div>
+            </div>
+          </details>
+        </div>
+
+        <nav class="project-pager" aria-label="Other projects">
+          <a href="altimeter.html">
+            <span class="pager-label">Previous</span>
+            <span class="pager-title">← Custom Altimeter PCB</span>
+          </a>
+          <a href="bread-io.html">
+            <span class="pager-label">Next</span>
+            <span class="pager-title">Industrial IO Card for BREAD →</span>
+          </a>
+        </nav>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Ian Van den Steen</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
