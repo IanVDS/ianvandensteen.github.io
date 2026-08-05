@@ -57,11 +57,19 @@
           </ul>
         </header>
 
-        <div class="project-hero-media">
-          <div class="media-placeholder">
-            <span>Drop image in assets/projects/buck-converter</span>
-          </div>
-          <!-- Replace placeholder with: <img src="../assets/projects/buck-converter.jpg" alt="Integrated 6S to 6V Buck Converter" /> -->
+        <div class="project-hero-media project-hero-media--schematic">
+          <img src="../assets/projects/buck-converter.png" alt="Schematic of the 6S servo buck converter — TPS54531 step-down stage with input filtering, soft-start, and compensation network" />
+        </div>
+
+        <div class="project-media-stack project-media-stack--row-2">
+          <figure class="project-hero-media project-hero-media--board">
+            <img src="../assets/projects/buck-converter-3d.png" alt="3D render of the 6S servo driver PCB with buck converter section outlined" />
+            <figcaption>3D board render</figcaption>
+          </figure>
+          <figure class="project-hero-media project-hero-media--board">
+            <img src="../assets/projects/buck-converter-2d.png" alt="2D PCB layout of the 6S servo driver with buck converter region outlined in black" />
+            <figcaption>2D board layout</figcaption>
+          </figure>
         </div>
 
         <div class="project-page-body">
@@ -76,6 +84,7 @@
               <li>Programmable under-voltage lockout and soft start</li>
               <li>Fixed 570kHz switching frequency</li>
               <li>Integrated into the servo driver PCB</li>
+              <li>Buck converter layout outlined in black on the board renders</li>
               <li>Designed in Altium Designer</li>
             </ul>
           </section>
@@ -108,10 +117,6 @@
           <a href="bread-io.html">
             <span class="pager-label">Previous</span>
             <span class="pager-title">← Industrial IO Card for BREAD</span>
-          </a>
-          <a href="robotic-arm.html">
-            <span class="pager-label">Next</span>
-            <span class="pager-title">Robotic Arm →</span>
           </a>
         </nav>
       </div>
