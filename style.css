@@ -13,7 +13,7 @@
   --shadow: 0 1px 2px rgba(28, 25, 23, 0.04), 0 8px 24px rgba(28, 25, 23, 0.05);
   --radius: 14px;
   --header-h: 64px;
-  --max: 1080px;
+  --max: 1180px;
   --font: "DM Sans", system-ui, -apple-system, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, monospace;
   color-scheme: light;
@@ -187,7 +187,7 @@ button:focus-visible {
 /* Hero ------------------------------------------------------------- */
 
 .hero {
-  padding: clamp(4rem, 12vw, 7.5rem) 0 clamp(3.5rem, 8vw, 5.5rem);
+  padding: clamp(1.25rem, 3.5vw, 2.25rem) 0 clamp(1.5rem, 3vw, 2rem);
 }
 
 .hero-inner {
@@ -195,7 +195,7 @@ button:focus-visible {
 }
 
 .eyebrow {
-  margin: 0 0 1.1rem;
+  margin: 0 0 0.65rem;
   font-family: var(--mono);
   font-size: 0.78rem;
   font-weight: 500;
@@ -205,17 +205,17 @@ button:focus-visible {
 }
 
 .hero h1 {
-  margin: 0 0 1rem;
-  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  margin: 0 0 0.65rem;
+  font-size: clamp(2rem, 4.5vw, 2.85rem);
   font-weight: 700;
   line-height: 1.08;
   letter-spacing: -0.035em;
 }
 
 .pitch {
-  margin: 0 0 2rem;
-  font-size: clamp(1.1rem, 2.2vw, 1.3rem);
-  line-height: 1.55;
+  margin: 0 0 1.15rem;
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  line-height: 1.5;
   color: var(--text-muted);
   max-width: 34rem;
 }
@@ -241,11 +241,15 @@ button:focus-visible {
 /* Sections --------------------------------------------------------- */
 
 .section {
-  padding: clamp(3.5rem, 8vw, 5.5rem) 0;
+  padding: clamp(2rem, 4vw, 3rem) 0;
+}
+
+.section.projects {
+  padding-top: clamp(1.25rem, 2.5vw, 1.75rem);
 }
 
 .section-header {
-  margin-bottom: clamp(2rem, 4vw, 2.75rem);
+  margin-bottom: clamp(1.25rem, 2.5vw, 1.75rem);
   max-width: 36rem;
 }
 
@@ -265,12 +269,25 @@ button:focus-visible {
 
 .project-grid {
   display: grid;
-  gap: 1.75rem;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 980px) {
+  .project-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .project-card {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -289,7 +306,8 @@ button:focus-visible {
 
 .project-link {
   display: inline-block;
-  margin-top: 1.15rem;
+  margin-top: auto;
+  padding-top: 1.15rem;
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--accent);
@@ -302,14 +320,15 @@ button:focus-visible {
 
 .project-media {
   background: color-mix(in srgb, var(--border) 55%, var(--bg));
-  min-height: 200px;
+  min-height: 180px;
+  aspect-ratio: 4 / 3;
 }
 
 .media-placeholder {
   display: grid;
   place-items: center;
   height: 100%;
-  min-height: 200px;
+  min-height: 180px;
   border-bottom: 1px solid var(--border);
   background:
     linear-gradient(135deg, transparent 48%, color-mix(in srgb, var(--border) 80%, transparent) 49%, color-mix(in srgb, var(--border) 80%, transparent) 51%, transparent 52%),
@@ -333,25 +352,29 @@ button:focus-visible {
 .project-media video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  min-height: 200px;
+  object-fit: contain;
+  min-height: 180px;
+  padding: 0.65rem;
 }
 
 .project-body {
-  padding: 1.5rem 1.5rem 1.65rem;
+  padding: 1.25rem 1.25rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .project-body h3 {
-  margin: 0 0 0.65rem;
-  font-size: 1.2rem;
+  margin: 0 0 0.55rem;
+  font-size: 1.05rem;
   font-weight: 600;
   letter-spacing: -0.02em;
 }
 
 .project-body p {
-  margin: 0 0 1.15rem;
+  margin: 0 0 1rem;
   color: var(--text-muted);
-  font-size: 0.98rem;
+  font-size: 0.92rem;
 }
 
 .project-body .tags {
@@ -376,27 +399,6 @@ button:focus-visible {
   background: var(--accent-soft);
   border-radius: 999px;
   padding: 0.3rem 0.65rem;
-}
-
-@media (min-width: 760px) {
-  .project-card {
-    grid-template-columns: minmax(240px, 38%) 1fr;
-    align-items: stretch;
-  }
-
-  .project-media {
-    min-height: 100%;
-  }
-
-  .media-placeholder {
-    min-height: 100%;
-    border-bottom: none;
-    border-right: 1px solid var(--border);
-  }
-
-  .project-body {
-    padding: 1.75rem 1.85rem;
-  }
 }
 
 /* About ------------------------------------------------------------ */
