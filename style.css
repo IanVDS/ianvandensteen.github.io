@@ -19,18 +19,6 @@
   color-scheme: light;
 }
 
-[data-theme="dark"] {
-  --bg: #141210;
-  --bg-elevated: #1c1916;
-  --text: #f5f0e8;
-  --text-muted: #a8a29e;
-  --border: #2e2a26;
-  --accent: #fb923c;
-  --accent-soft: rgba(251, 146, 60, 0.12);
-  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px rgba(0, 0, 0, 0.25);
-  color-scheme: dark;
-}
-
 *,
 *::before,
 *::after {
@@ -148,40 +136,6 @@ button:focus-visible {
 
 .nav a:hover {
   color: var(--text);
-}
-
-.theme-toggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  margin-left: 0.25rem;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  background: var(--bg-elevated);
-  color: var(--text-muted);
-  cursor: pointer;
-  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
-}
-
-.theme-toggle:hover {
-  color: var(--text);
-  border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
-}
-
-.theme-icon {
-  display: none;
-  line-height: 0;
-}
-
-[data-theme="light"] .theme-icon--moon,
-:root:not([data-theme]) .theme-icon--moon {
-  display: block;
-}
-
-[data-theme="dark"] .theme-icon--sun {
-  display: block;
 }
 
 /* Hero ------------------------------------------------------------- */
@@ -606,6 +560,16 @@ button:focus-visible {
   box-shadow: var(--shadow);
 }
 
+figure.project-hero-media {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  width: 100%;
+  max-width: 100%;
+  justify-self: stretch;
+  box-sizing: border-box;
+}
+
 .project-hero-media .media-placeholder {
   min-height: clamp(220px, 40vw, 380px);
   border-bottom: none;
@@ -626,6 +590,27 @@ button:focus-visible {
   object-fit: contain;
   min-height: clamp(260px, 48vw, 480px);
   padding: 0.75rem;
+}
+
+.project-hero-media--natural img {
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  object-fit: contain;
+  padding: 0.75rem 1rem;
+}
+
+.project-hero-media--natural figcaption {
+  margin: 0;
+  padding: 0.65rem 1rem 0.85rem;
+  border-top: 1px solid var(--border);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: var(--bg-elevated);
 }
 
 .project-media-stack {
@@ -690,9 +675,14 @@ button:focus-visible {
 
   .project-media-stack > :only-child {
     grid-column: 1 / -1;
+    width: 100%;
+    max-width: 100%;
+    justify-self: stretch;
+  }
+
+  .project-media-stack > .project-hero-media--board:only-child {
     max-width: 28rem;
     justify-self: center;
-    width: 100%;
   }
 
   .project-media-stack--row-2,

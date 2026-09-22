@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Three-phase inverter with FOC control for a robotic actuator — dual-ADC current sensing, overcurrent trip, CAN and I2C. Ian Van den Steen." />
+  <title>Three-Phase Inverter — Ian Van den Steen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="../index.html" aria-label="Home">IVDS</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="project-page">
+      <div class="container">
+        <a class="back-link" href="../index.html#projects">← All projects</a>
+
+        <header class="project-page-header">
+          <p class="eyebrow">Power electronics · Robotics · In progress</p>
+          <h1>Three-Phase Inverter</h1>
+          <p class="project-page-lede">
+            I want to create a robotic actuator from scratch, to learn more about robotics,
+            and as a joint in a 6DOF robotic arm I am designing.
+          </p>
+          <ul class="tags">
+            <li>Altium Designer</li>
+            <li>FOC</li>
+            <li>Power Electronics</li>
+            <li>Robotics</li>
+          </ul>
+        </header>
+
+        <figure class="project-hero-media project-hero-media--schematic project-hero-media--natural">
+          <img src="../assets/projects/three-phase-inverter-block.png" alt="System architecture block diagram of the three-phase inverter — MCU, bucks, gate drivers, MOSFETs, and sensing" />
+          <figcaption>System Diagram</figcaption>
+        </figure>
+
+        <div class="project-media-stack">
+          <figure class="project-hero-media project-hero-media--schematic project-hero-media--natural">
+            <img src="../assets/projects/three-phase-inverter-half-bridge.png" alt="Half-bridge schematic with UCC27211 gate driver, NTD5865N MOSFETs, and INA240 current sense" />
+            <figcaption>Half-bridge schematic</figcaption>
+          </figure>
+        </div>
+
+        <div class="project-page-body">
+          <section>
+            <h2>Notable features</h2>
+            <ul>
+              <li>Hardware synchronized dual-ADCs for low-side two-phase current sensing with KCL reconstruction for third phase.</li>
+              <li>Mini-USB for easy computer interface, SWD for debugging, CAN-bus and I2C for embedded control.</li>
+              <li>Independent hardware overcurrent trip.</li>
+              <li>Designed using Altium Designer to JLCPCB’s manufacturing contraints.</li>
+              <li>Full schematic can be found here.</li>
+            </ul>
+          </section>
+
+          <details class="star-details">
+            <summary>Project details <span class="star-hint">(Situation · Task · Action · Result)</span></summary>
+            <div class="star-grid">
+              <div class="star-item">
+                <h3>Situation</h3>
+                <p>
+                  I want to create a robotic actuator from scratch, to learn more about
+                  robotics, and as a joint in a 6DOF robotic arm I am designing.
+                </p>
+              </div>
+              <div class="star-item">
+                <h3>Task</h3>
+                <p>
+                  I want to design the electronics and FOC control loop before I design the
+                  actuator itself, and will likely use an open source actuator like OpenQDD
+                  in its place to begin.
+                </p>
+              </div>
+              <div class="star-item">
+                <h3>Action</h3>
+                <p>
+                  I decided on the architecture, went through component selection, and I am
+                  now making the schematic. I’m also simulating the system in Python to
+                  understand the physics, as well as Clarke and Park transforms, before the
+                  board arrives.
+                </p>
+              </div>
+              <div class="star-item">
+                <h3>Result</h3>
+                <p>To be determined!</p>
+              </div>
+            </div>
+          </details>
+        </div>
+
+        <nav class="project-pager" aria-label="Other projects">
+          <a href="usb-pd-source.html">
+            <span class="pager-label">Next</span>
+            <span class="pager-title">100W USB PD Source Custom PCB →</span>
+          </a>
+        </nav>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Ian Van den Steen</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
