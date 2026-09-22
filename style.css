@@ -49,6 +49,7 @@ video {
 
 a {
   color: inherit;
+  text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.18em;
   transition: color 0.15s ease, opacity 0.15s ease;
@@ -832,6 +833,20 @@ figure.project-hero-media {
 
 .project-page-body li:last-child {
   margin-bottom: 0;
+}
+
+.project-page-body a.inline-link,
+.project-page-body .inline-link {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.18em;
+  cursor: pointer;
+}
+
+.project-page-body a.inline-link:hover {
+  opacity: 0.85;
 }
 
 .project-pager {
