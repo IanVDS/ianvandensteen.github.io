@@ -145,6 +145,33 @@ button:focus-visible {
 }
 
 .hero-inner {
+  display: grid;
+  grid-template-columns: minmax(200px, 320px) minmax(0, 1fr);
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  align-items: center;
+  max-width: none;
+}
+
+.hero-photo {
+  margin: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  background: var(--bg-elevated);
+  aspect-ratio: 5 / 3;
+  max-height: 200px;
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 62%;
+  display: block;
+}
+
+.hero-copy {
   max-width: 40rem;
 }
 
@@ -190,6 +217,19 @@ button:focus-visible {
 
 .hero-links a:hover {
   border-bottom-color: var(--accent);
+}
+
+@media (max-width: 640px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+  }
+
+  .hero-photo {
+    max-width: 280px;
+    max-height: 160px;
+    aspect-ratio: 5 / 3;
+  }
 }
 
 /* Sections --------------------------------------------------------- */
